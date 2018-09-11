@@ -34,11 +34,11 @@ class Film extends Component {
         return (
             <Fragment>
                 <Header />
-            <div className="d-flex justify-content-center">
-                <div className="card-group" style={{ maxWidth: "35rem" }}>
-                    <FilmCard title={film.title} rt={film.rt_score} desc={film.description} direc={film.director} prod={film.producer} date={film.release_date} key={film.id} />
+                <div className="d-flex justify-content-center">
+                    <div className="card-group" style={{ maxWidth: "35rem" }}>
+                        <FilmCard title={film.title} rt={film.rt_score} desc={film.description} direc={film.director} prod={film.producer} date={film.release_date} key={film.id} />
+                    </div>
                 </div>
-            </div>
             </Fragment>
         );
 
