@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import 'es6-promise';
 import 'isomorphic-fetch';
 import FilmCard from './FilmCard';
 import { Link } from 'react-router-dom';
+import Header from './Home';
 
 class Films extends Component {
     constructor(props) {
@@ -27,23 +28,25 @@ class Films extends Component {
         }
     }
 
-   
+
     render() {
 
 
         let cards = this.state.data.map((film) => {
-            let filmLink = <Link className="btn btn-dark text-center" to={`/films/${film.id}`} key={`/films/${film.id}`} >{film.title}</Link>;
+            let filmLink = <Link className="btn btn-dark text-center" to={`/films/${film.id}`} key={`/films/${film.id}`}>More Info</Link>;
 
             return (
+                <FilmCard title={film.title} link={filmLink} key={film.id} />
 
-
-                    <FilmCard title={film.title} rt={film.rt_score} desc={film.description} direc={film.director} prod={film.producer} date={film.release_date} link={filmLink} key={film.id} />
             );
         });
         return (
-            <div className="card-columns">
-                {cards}
-            </div>
+            <Fragment>
+                <Header />
+                <div className="card-columns">
+                    {cards}
+                </div>
+            </Fragment>
         );
 
     }
