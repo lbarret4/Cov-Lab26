@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import 'es6-promise';
 import 'isomorphic-fetch';
 import FilmCard from './FilmCard';
-
+import Header from './Home';
 
 class Film extends Component {
     constructor(props) {
@@ -29,13 +29,17 @@ class Film extends Component {
     render() {
 
         let film = this.state.data;
-                
-       
+
+
         return (
-            
-            <div className=/* "card-columns" */ "card-group" style={{maxWidth: "30vw"}}>
-                <FilmCard title={film.title} rt={film.rt_score} desc={film.description} direc={film.director} prod={film.producer} date={film.release_date} key={film.id+"a23"} />
+            <Fragment>
+                <Header />
+            <div className="d-flex justify-content-center">
+                <div className="card-group" style={{ maxWidth: "35rem" }}>
+                    <FilmCard title={film.title} rt={film.rt_score} desc={film.description} direc={film.director} prod={film.producer} date={film.release_date} key={film.id} />
+                </div>
             </div>
+            </Fragment>
         );
 
     }
