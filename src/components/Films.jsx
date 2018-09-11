@@ -14,7 +14,7 @@ class Films extends Component {
     }
 
     async componentDidMount() {
-        let url = `https://ghibliapi.herokuapp.com${this.props.match.url}`;
+        let url = 'https://ghibliapi.herokuapp.com/films';
         try {
             let results = await fetch(url);
             results = await results.json();
