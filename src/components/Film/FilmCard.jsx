@@ -29,10 +29,10 @@ let FilmCard = (props) => {
             <div className="card-header text-center">
                 <h4> {props.title} </h4>
             </div>
-            { props.date !== undefined && props.rt ? ratingAndDate : props.date}
+            {props.date !== undefined && props.rt ? ratingAndDate : props.date}
             <div className="card-body">
-            {props.desc !== undefined ? description : props.desc}
-                <span className="d-flex justify-content-center"> {props.link}</span>
+                {props.desc !== undefined ? description : props.desc}
+                <span className="d-flex flex-column"> {props.link}</span>
 
             </div>
             <div className="card-footer ">
